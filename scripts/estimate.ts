@@ -16,6 +16,7 @@ async function estimateDeploymentTransaction() {
 	console.log({estimate: estimate.toString() })
 	const gasPrice = await provider.getGasPrice()
 	console.log({gasPriceGwei: ethers.utils.formatUnits(gasPrice, "gwei"), gasPrice: gasPrice.toString() })
+	console.log({gasPriceWei: ethers.utils.formatUnits(gasPrice, "wei"), gasPrice: gasPrice.toString() })
 }
 
 runScript(estimateDeploymentTransaction)

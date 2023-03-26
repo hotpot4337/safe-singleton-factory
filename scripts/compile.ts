@@ -26,6 +26,7 @@ async function writeFactoryDeployerTransaction(contract: CompilerOutputContract,
 	const deploymentBytecode = contract.evm.bytecode.object
 
 	const nonce = overwrites?.nonce || 0
+	console.log('nonce', nonce)
 	const gasPrice = overwrites?.gasPrice != undefined ? overwrites.gasPrice : 100*10**9
 	// actual gas costs last measure: 59159; we don't want to run too close though because gas costs can change in forks and we want our address to be retained
 	const gasLimit = overwrites?.gasLimit || 100000
